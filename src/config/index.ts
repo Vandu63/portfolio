@@ -1,10 +1,10 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Your Name — Backend Developer & Software Engineer",
-  author: "Your Name",
+  title: "Vandana Yadav — AI/ML Engineer & MTech Student",
+  author: "Vandana Yadav",
   description:
-    "Software Engineer based in India, Specialized in Backend development with AI integrations using Node.js, NestJs, MongoDB, PostgreSQL",
+    "MTech student specializing in Artificial Intelligence & Machine Learning, passionate about building intelligent systems using Python, deep learning, and data-driven solutions.",
   lang: "en",
   siteLogo: "/avatar-small.jpg",
   navLinks: [
@@ -26,10 +26,10 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Your Name",
-    specialty: "Backend Engineer",
-    summary: `Backend engineer based in India, specializing in Node.js, NestJS, and AI integrations. Passionate about building scalable, efficient systems that solve real-world problems and drive innovation.`,
-    email: "your@email.com",
+    name: "Vandana Yadav",
+    specialty: "AI/ML Engineer",
+    summary: `Currently pursuing MTech in Artificial Intelligence & Machine Learning. Passionate about building intelligent systems, exploring deep learning, and applying Python-powered solutions to solve real-world problems.`,
+    email: "vandana33yadav@gmail.com",
   },
   experience: [
     {
@@ -184,7 +184,7 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi, I'm Your Name — a backend developer with experience building scalable REST APIs, WebSockets, and AI integrations using Node.js and NestJS. Proficient in clean architecture, third-party and AI integrations, and cloud technologies (AWS, Azure, GCP). Delivered AI-powered and fintech solutions, enhancing user experience and operational efficiency. Passionate about leveraging technology to solve real-world problems and drive innovation.
+      Hi, I'm Vandana Yadav — currently pursuing MTech in Artificial Intelligence & Machine Learning. I work primarily with Python and its powerful ecosystem of libraries to build intelligent, data-driven solutions. My interests span machine learning, deep learning, and AI research. I'm passionate about leveraging cutting-edge technology to solve real-world problems and make a meaningful impact through innovation.
     `,
     image: "/avatar-big.jpg",
   },
