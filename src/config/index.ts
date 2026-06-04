@@ -14,7 +14,7 @@ export const SITE_CONFIG: SiteConfig = {
   ],
   socialLinks: [
     { text: "X (Twitter)", href: "https://x.com/yourhandle" },
-    { text: "Github", href: "https://github.com/yourusername" },
+    { text: "Github", href: "https://github.com/vandu63" },
     {
       text: "LinkedIn",
       href: "https://www.linkedin.com/in/yourprofile/",
