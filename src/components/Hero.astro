@@ -1,0 +1,78 @@
+---
+import type { HeroProps } from "@types";
+type Props = HeroProps;
+
+const { name, specialty, summary, email } = Astro.props;
+---
+
+<section class="relative py-24 md:py-36 overflow-hidden" id="#hero">
+  <!-- Ambient glow blobs -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      class="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl animate-[glow-pulse_4s_ease-in-out_infinite]"
+    ></div>
+    <div
+      class="absolute top-20 right-0 w-[350px] h-[350px] rounded-full bg-violet-500/4 blur-3xl animate-[glow-pulse_6s_ease-in-out_infinite_1s]"
+    ></div>
+  </div>
+
+  <!-- Decorative grid lines -->
+  <div class="pointer-events-none absolute inset-0 opacity-[3%]"
+    style="background-image: linear-gradient(rgba(139,92,246,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.8) 1px, transparent 1px); background-size: 60px 60px;">
+  </div>
+
+  <div class="relative">
+    <!-- Badge -->
+    <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm text-primary backdrop-blur-sm">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+      </span>
+      Available for opportunities
+    </div>
+
+    <h1
+      class="mb-3 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-2 md:text-9xl"
+    >
+      {name}
+    </h1>
+    <p
+      class="mb-10 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-gradient sm:text-5xl md:text-6xl"
+    >
+      {specialty}
+    </p>
+    <p class="mb-14 max-w-2xl text-base font-normal text-neutral md:text-lg leading-relaxed">
+      {summary}
+    </p>
+
+    <div class="flex flex-wrap items-center gap-4">
+      <a
+        class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:shadow-primary/30 active:scale-95"
+        href={`mailto:${email}`}
+      >
+        <span>Get in Touch</span>
+        <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        <!-- Shine effect -->
+        <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full"></span>
+      </a>
+      <a
+        class="inline-flex items-center gap-2 rounded-full border border-primary/30 px-8 py-4 text-sm font-semibold text-neutral transition-all duration-300 hover:border-primary/60 hover:text-white hover:bg-primary/5"
+        href="/projects"
+      >
+        View Projects
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+</style>

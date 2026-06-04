@@ -1,0 +1,144 @@
+---
+import Menu from "@icons/Menu.astro";
+import { Image } from "astro:assets";
+import type { HeaderProps } from "@types";
+
+type Props = HeaderProps;
+
+const { siteLogo, navLinks } = Astro.props;
+---
+
+<header
+  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between px-5 py-5"
+  id="site-header"
+>
+  <!-- Glassmorphism backdrop -->
+  <div class="header-glass absolute inset-0 z-[-1]"></div>
+
+  <a href="/" aria-label="Home link" class="flex items-center gap-3 group">
+    <div class="relative">
+      <div class="absolute inset-0 rounded-full bg-primary/20 blur-md group-hover:bg-primary/35 transition-all duration-300"></div>
+      <Image
+        class="relative rounded-full ring-2 ring-primary/30 group-hover:ring-primary/60 transition-all duration-300"
+        src={siteLogo}
+        width="42"
+        height="42"
+        alt="site logo"
+      />
+    </div>
+  </a>
+
+  <button
+    type="button"
+    id="menu-button"
+    class="px-1.5 text-neutral sm:hidden"
+    aria-expanded="false"
+    aria-controls="main-menu"
+  >
+    <Menu />
+  </button>
+
+  <nav
+    class="absolute top-[72px] right-5 hidden rounded-2xl border border-primary/10 bg-surface/95 backdrop-blur-xl px-5 py-4 text-neutral shadow-xl shadow-black/40 sm:static sm:block sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none"
+    id="main-menu"
+  >
+    <ul class="flex flex-col gap-1 sm:flex-row sm:gap-1">
+      {
+        navLinks.map((link) => (
+          <li class="relative">
+            <a
+              class="nav-item group relative block px-4 py-2 text-sm font-medium text-neutral transition-all duration-300 rounded-lg hover:text-white hover:bg-primary/10"
+              href={link.href}
+            >
+              <span class="relative z-10">{link.text}</span>
+              <span class="absolute bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-primary rounded-full transition-all duration-300 group-hover:w-4/5 opacity-0 group-hover:opacity-100"></span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const button = document.querySelector("#menu-button");
+  const menu = document.querySelector("#main-menu");
+  const navItems = document.querySelectorAll("#main-menu > ul > li > a");
+
+  const toggleMenu = () => {
+    menu?.classList.toggle("hidden");
+    const isHidden = menu?.classList.contains("hidden");
+    button?.setAttribute("aria-expanded", `${!isHidden}`);
+  };
+
+  button?.addEventListener("click", toggleMenu);
+  navItems.forEach((item) => {
+    item?.addEventListener("click", toggleMenu);
+  });
+
+  // Scroll observer for active nav items
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("href") === `#${entry.target.id}`) {
+              item.classList.add("text-white", "bg-primary/10");
+            } else {
+              item.classList.remove("text-white", "bg-primary/10");
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  document.querySelectorAll("section").forEach((section) => {
+    observer.observe(section);
+  });
+
+  document.onvisibilitychange = () => {
+    if (document.visibilityState === "hidden") {
+      observer.disconnect();
+    } else {
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+    }
+  };
+</script>
+
+<style>
+  header {
+    animation-timeline: scroll();
+    animation-range: 0 650px;
+  }
+
+  .header-glass {
+    background: rgba(8, 12, 18, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  /* Becomes glass on scroll */
+  header.scrolled .header-glass {
+    background: rgba(8, 12, 18, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom-color: rgba(139, 92, 246, 0.1);
+  }
+</style>
+
+<script>
+  const header = document.querySelector("#site-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  });
+</script>

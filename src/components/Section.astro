@@ -1,0 +1,21 @@
+---
+interface Props {
+  text: string;
+  href: string;
+}
+
+const { text, href } = Astro.props;
+---
+
+<section id={href} class="py-24">
+  <div class="mb-14 flex items-center gap-4">
+    <div class="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent max-w-8"></div>
+    <h2
+      class="font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl"
+    >
+      {text}
+    </h2>
+    <div class="h-px flex-1 bg-gradient-to-l from-transparent to-transparent"></div>
+  </div>
+  <slot />
+</section>

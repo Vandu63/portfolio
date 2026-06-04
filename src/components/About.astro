@@ -1,0 +1,54 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+import type { AboutProps, HeroProps } from "@types";
+
+type Props = AboutProps & Pick<HeroProps, "name">;
+
+const { description, image, name } = Astro.props;
+---
+
+<Section text="About Me" href="about">
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-[1fr_auto] md:gap-16 items-center">
+    <div>
+      <p class="text-base text-neutral leading-relaxed md:text-lg">{description}</p>
+
+      <!-- Skills chips -->
+      <div class="mt-8 flex flex-wrap gap-2">
+        {["Node.js", "NestJS", "TypeScript", "MongoDB", "PostgreSQL", "AWS", "Docker", "AI Integrations", "REST APIs", "WebSockets"].map((skill) => (
+          <span class="group rounded-full border border-primary/15 bg-primary/5 px-3 py-1 text-xs font-medium text-neutral transition-all duration-200 hover:border-primary/40 hover:bg-primary/10 hover:text-primary cursor-default">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Photo with polaroid effect -->
+    <div class="flex justify-center md:justify-end">
+      <div
+        class="relative h-80 w-64 flex-shrink-0 rotate-[4deg] transition-transform duration-500 hover:rotate-0"
+        style="transform-origin: bottom center;"
+      >
+        <!-- Shadow -->
+        <div class="absolute inset-0 translate-y-2 rounded-sm bg-black/40 blur-xl"></div>
+        <!-- Polaroid frame -->
+        <div class="relative flex h-full flex-col bg-white p-3 pb-8 shadow-2xl">
+          <div class="flex-1 overflow-hidden">
+            <Image
+              class="h-full w-full object-cover"
+              src={image}
+              width="240"
+              height="280"
+              alt={name}
+            />
+          </div>
+          <p class="mt-2 text-center font-sans text-xs text-gray-500 tracking-wider uppercase">
+            {name}
+          </p>
+        </div>
+        <!-- Pin effect -->
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-primary shadow-lg shadow-primary/50 ring-2 ring-white/20 z-10"></div>
+      </div>
+    </div>
+  </div>
+</Section>
