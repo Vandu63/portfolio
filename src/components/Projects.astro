@@ -17,9 +17,8 @@ const { projects } = Astro.props;
         const isEven = index % 2 === 0;
         return (
           <div class="group border-glow relative overflow-hidden rounded-2xl border border-primary/10 bg-surface transition-all duration-500 hover:border-primary/25 hover:shadow-2xl hover:shadow-primary/10">
-            <!-- Noise texture overlay -->
             <div class="pointer-events-none absolute inset-0 opacity-[3%]"
-              style="background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")">
+              style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")` }}>
             </div>
 
             <div class={`relative z-[1] grid min-h-[400px] grid-rows-[1fr_auto] md:grid-rows-1 md:grid-cols-2 md:min-h-[320px] ${isEven ? '' : 'md:[&>*:first-child]:order-2'}`}>

@@ -15,7 +15,7 @@ const { experience } = Astro.props;
     <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-primary/20 to-transparent ml-5 hidden md:block"></div>
 
     {
-      experience.map(({ company, position, startDate, endDate, summary }, idx) => (
+      experience.map(({ company, position, startDate, endDate, summary }) => (
         <div class="group relative mb-10 md:pl-16">
           <!-- Timeline dot -->
           <div class="absolute left-0 top-1 hidden md:flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-surface ring-4 ring-black transition-all duration-300 group-hover:border-primary/70 group-hover:ring-primary/10">
