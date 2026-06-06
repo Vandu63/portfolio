@@ -32,25 +32,25 @@ export const SITE_CONTENT: SiteContent = {
   },
   experience: [
     {
-      company: "Company Name",
-      position: "Backend Developer",
+      company: "Self-Learning / Academic Training",
+      position: "Python & AI/ML Trainee",
       startDate: "Nov 2025",
       endDate: "Present",
       summary: [
-        "Building Agent AI workflows, integrating AI models, and orchestrating asynchronous tasks using Node.js and NestJS while maintaining clean architecture.",
-        "Working in agile environments helped me prioritize tasks effectively, deliver incremental improvements, and adapt quickly to evolving AI-driven requirements.",
-        "Strengthened my ability to debug complex AI-related issues, from model response inconsistencies to performance bottlenecks in agent pipelines.",
+        "Deepening expertise in Python for AI/ML by building end-to-end pipelines using TensorFlow and PyTorch, covering model training, fine-tuning, and deployment.",
+        "Exploring advanced deep learning concepts including CNNs, RNNs, transformers, and LLM-based agent workflows using LangChain and Hugging Face.",
+        "Strengthened debugging and optimization skills across Python-based AI systems, from data preprocessing bottlenecks to model inference performance tuning.",
       ],
     },
     {
-      company: "Previous Company",
-      position: "Node.js Developer",
+      company: "Academic & Project-Based Training",
+      position: "Python Developer",
       startDate: "Sept 2023",
       endDate: "May 2025",
       summary: [
-        "Gained hands-on experience in building REST APIs, Websockets using Node.js and NestJS, implementing clean architecture, and integrating third-party services.",
-        "Working in agile environments taught me how to prioritize tasks, deliver iteratively, and adapt to changing requirements.",
-        "Sharpened ability to troubleshoot complex issues, whether it was a bug in the code or a performance bottleneck.",
+        "Built machine learning and data analysis projects using Python, Scikit-learn, Pandas, NumPy, Matplotlib, and Seaborn, applying statistical and ML techniques to real-world datasets.",
+        "Developed REST APIs and backend services using FastAPI and Django, applying clean code principles and data validation with Pydantic.",
+        "Sharpened problem-solving skills through debugging data pipelines, model evaluation challenges, and optimizing Python code for performance and readability.",
       ],
     },
   ],
@@ -172,7 +172,7 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi, I'm Vandana Yadav — currently pursuing MTech in Artificial Intelligence & Machine Learning. I work primarily with Python and its powerful ecosystem of libraries to build intelligent, data-driven solutions. My interests span machine learning, deep learning, and AI research. I'm passionate about leveraging cutting-edge technology to solve real-world problems and make a meaningful impact through innovation.
+      Hi, I'm Vandana Yadav — currently pursuing MTech in Artificial Intelligence & Machine Learning. I work primarily with Python and its rich ecosystem to build intelligent, data-driven solutions. My core stack includes TensorFlow, PyTorch, and Scikit-learn for machine learning and deep learning, Pandas and NumPy for data manipulation, Matplotlib and Seaborn for visualization, and FastAPI and Django for building scalable backends. I also work with LangChain and Hugging Face for LLM-based applications. I'm passionate about leveraging cutting-edge technology to solve real-world problems and make a meaningful impact through innovation.
     `,
     image: "/avatar-big.jpg",
   },
