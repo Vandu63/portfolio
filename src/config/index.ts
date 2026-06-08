@@ -61,7 +61,7 @@ export const SITE_CONTENT: SiteContent = {
         "ML pipeline applying PCA for dimensionality reduction and Random Forest classification to evaluate health risk with improved accuracy and computational efficiency.",
       linkPreview: "",
       linkSource: "https://github.com/Vandu63/Health-Risk-Analysis-PCA-RandomForest",
-      image: "/project1.png",
+      image: "/health_risk_pca.png",
       slug: "health-risk-analysis-pca-randomforest",
       description:
         "A machine learning project focused on health risk classification. A Random Forest classifier is trained on both original and PCA-transformed data to evaluate improvements in classification accuracy and computational efficiency. The project demonstrates how dimensionality reduction through PCA can enhance model performance while reducing training time on high-dimensional health datasets.",
@@ -101,7 +101,7 @@ export const SITE_CONTENT: SiteContent = {
         "Real-time face detection and recognition system built with Python and OpenCV, identifying faces from a live webcam feed using LBPH algorithm.",
       linkPreview: "",
       linkSource: "https://github.com/Vandu63/Face-Recognition-Using-OpenCV",
-      image: "/project2.png",
+      image: "/face_recognition.png",
       slug: "face-recognition-opencv",
       description:
         "A Python-based Face Recognition system developed using OpenCV for real-time face detection and recognition. The system captures live video from a webcam, detects faces using Haar cascade classifiers, and recognizes them by comparing against a trained dataset. It demonstrates core computer vision techniques including image preprocessing, feature extraction, and classification.",
@@ -138,7 +138,7 @@ export const SITE_CONTENT: SiteContent = {
         "Exploratory data analysis of the global COVID-19 dataset using Python, Pandas, and statistical techniques to uncover meaningful insights about the pandemic.",
       linkPreview: "",
       linkSource: "https://github.com/Vandu63/COVID19-Data-Analysis-Using-Python",
-      image: "/project3.png",
+      image: "/covid_data_analysis.png",
       slug: "covid19-data-analysis",
       description:
         "An exploratory data analysis (EDA) project on the global COVID-19 dataset using Python, Pandas, and statistical techniques to derive meaningful insights. The project examines trends in confirmed cases, recoveries, and fatalities across countries and time periods, producing clear visualizations that communicate the pandemic's progression and regional impact.",
