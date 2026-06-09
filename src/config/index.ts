@@ -56,6 +56,46 @@ export const SITE_CONTENT: SiteContent = {
   ],
   projects: [
     {
+      name: "Contexians: A Conscious Context-Aware Multi-Document Q&A System Using RAG",
+      summary:
+        "A full-stack context-aware multi-document Q&A system using RAG, enabling users to upload and query multiple PDF documents with precise cited source attribution.",
+      linkPreview: "",
+      linkSource: "https://github.com/Vandu63",
+      image: "/contexians_rag.png",
+      slug: "contexians-rag",
+      description:
+        "Contexians is a full-stack, conscious context-aware multi-document Q&A application designed to analyze and query complex document sets. Users can upload multiple PDF documents (such as legal agreements, academic research papers, or technical manuals) and interact with them using natural language. The system leverages Retrieval-Augmented Generation (RAG) to scan across all uploaded files, identify relevant context, synthesize an accurate answer, and provide precise citation and source attribution for every piece of information used, ensuring trust and verifiability.",
+      myRole: "Full-Stack AI Engineer",
+      techStack: [
+        "Python",
+        "LangChain",
+        "FastAPI",
+        "React",
+        "Vector Database",
+        "ChromaDB / Pinecone",
+        "OpenAI / Hugging Face",
+        "PyPDF",
+        "RAG",
+      ],
+      features: [
+        "Multi-document ingestion: Upload and process multiple PDFs concurrently.",
+        "Context-aware Q&A: Query across all uploaded documents simultaneously with semantic understanding.",
+        "Cited source attribution: Detailed citation with page numbers and source document names for transparency.",
+        "Interactive chat interface: User-friendly conversational UI showing source citations alongside answers.",
+        "Vector similarity search: Efficient document chunking, embedding generation, and indexing in a vector store.",
+      ],
+      challenges: [
+        "Handling large PDF documents with diverse structures, formatting, and layouts.",
+        "Mitigating hallucinations by strictly constraining responses to the retrieved context.",
+        "Optimizing chunking strategies and overlap parameters to maintain semantic cohesion.",
+      ],
+      learnings: [
+        "Implementing end-to-end Retrieval-Augmented Generation (RAG) pipelines using Python and LangChain.",
+        "Working with vector databases for efficient semantic indexing and similarity searches.",
+        "Designing clear citation structures in conversational interfaces to build reliable AI applications.",
+      ],
+    },
+    {
       name: "Health Risk Analysis with PCA & Random Forest",
       summary:
         "ML pipeline applying PCA for dimensionality reduction and Random Forest classification to evaluate health risk with improved accuracy and computational efficiency.",
