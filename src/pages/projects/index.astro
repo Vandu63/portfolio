@@ -22,7 +22,7 @@ const { siteLogo, navLinks, author, socialLinks } = SITE_CONFIG;
     />
     <meta name="author" content={author} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
     <title>Projects — {author}</title>
 
@@ -97,7 +97,7 @@ const { siteLogo, navLinks, author, socialLinks } = SITE_CONFIG;
 
                   <!-- Content -->
                   <div class="p-5">
-                    <a href={`/projects/${project.slug}`} class="block">
+                    <a href={`${import.meta.env.BASE_URL}projects/${project.slug}`} class="block">
                       <h3 class="mb-2 font-serif text-xl font-semibold text-white transition-colors duration-200 group-hover:text-primary">
                         {project.name}
                       </h3>
@@ -123,7 +123,7 @@ const { siteLogo, navLinks, author, socialLinks } = SITE_CONFIG;
                     <!-- Actions -->
                     <div class="flex items-center justify-between">
                       <a
-                        href={`/projects/${project.slug}`}
+                        href={`${import.meta.env.BASE_URL}projects/${project.slug}`}
                         class="inline-flex items-center gap-1.5 text-xs font-medium text-primary transition-all duration-200 hover:gap-2.5"
                       >
                         View Details
@@ -170,7 +170,7 @@ const { siteLogo, navLinks, author, socialLinks } = SITE_CONFIG;
         <!-- Back to Home -->
         <section class="mx-auto max-w-6xl px-6 pb-16 text-center">
           <a
-            href="/"
+            href={import.meta.env.BASE_URL}
             class="group inline-flex items-center gap-2 text-sm text-neutral transition-all duration-200 hover:text-white"
           >
             <svg

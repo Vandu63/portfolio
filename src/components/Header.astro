@@ -6,6 +6,8 @@ import type { HeaderProps } from "@types";
 type Props = HeaderProps;
 
 const { siteLogo, navLinks } = Astro.props;
+
+const isHome = Astro.url.pathname === import.meta.env.BASE_URL;
 ---
 
 <header
@@ -15,7 +17,7 @@ const { siteLogo, navLinks } = Astro.props;
   <!-- Glassmorphism backdrop -->
   <div class="header-glass absolute inset-0 z-[-1]"></div>
 
-  <a href="/" aria-label="Home link" class="flex items-center gap-3 group">
+  <a href={import.meta.env.BASE_URL} aria-label="Home link" class="flex items-center gap-3 group">
     <div class="relative">
       <div class="absolute inset-0 rounded-full bg-primary/20 blur-md group-hover:bg-primary/35 transition-all duration-300"></div>
       <Image
@@ -44,17 +46,28 @@ const { siteLogo, navLinks } = Astro.props;
   >
     <ul class="flex flex-col gap-1 sm:flex-row sm:gap-1">
       {
-        navLinks.map((link) => (
-          <li class="relative">
-            <a
-              class="nav-item group relative block px-4 py-2 text-sm font-medium text-neutral transition-all duration-300 rounded-lg hover:text-white hover:bg-primary/10"
-              href={link.href}
-            >
-              <span class="relative z-10">{link.text}</span>
-              <span class="absolute bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-primary rounded-full transition-all duration-300 group-hover:w-4/5 opacity-0 group-hover:opacity-100"></span>
-            </a>
-          </li>
-        ))
+        navLinks.map((link) => {
+          let href = link.href;
+          if (href.startsWith("#")) {
+            if (!isHome) {
+              href = `${import.meta.env.BASE_URL}${href}`;
+            }
+          } else if (href.startsWith("/")) {
+            href = `${import.meta.env.BASE_URL}${href.slice(1)}`;
+          }
+
+          return (
+            <li class="relative">
+              <a
+                class="nav-item group relative block px-4 py-2 text-sm font-medium text-neutral transition-all duration-300 rounded-lg hover:text-white hover:bg-primary/10"
+                href={href}
+              >
+                <span class="relative z-10">{link.text}</span>
+                <span class="absolute bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-primary rounded-full transition-all duration-300 group-hover:w-4/5 opacity-0 group-hover:opacity-100"></span>
+              </a>
+            </li>
+          );
+        })
       }
     </ul>
   </nav>
