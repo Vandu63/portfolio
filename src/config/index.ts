@@ -53,7 +53,7 @@ export const SITE_CONTENT: SiteContent = {
         "Sharpened problem-solving skills through debugging data pipelines, model evaluation challenges, and optimizing Python code for performance and readability.",
       ],
     },
-  ],
+  ],  
   projects: [
     {
       name: "Contexians: A Conscious Context-Aware Multi-Document Q&A System Using RAG",
