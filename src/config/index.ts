@@ -59,7 +59,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "Contexians: A Conscious Context-Aware Multi-Document Q&A System Using RAG",
       summary:
         "A full-stack context-aware multi-document Q&A system using RAG, enabling users to upload and query multiple PDF documents with precise cited source attribution.",
-      linkPreview: "",
+      linkPreview: "https://contexians-react.vercel.app/",
       linkSource: "https://github.com/Vandu63",
       image: "/contexians_rag.png",
       slug: "contexians-rag",
