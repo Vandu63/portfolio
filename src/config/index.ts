@@ -10,6 +10,7 @@ export const SITE_CONFIG: SiteConfig = {
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "/projects" },
+    { text: "Education", href: "#education" },
     { text: "About", href: "#about" },
   ],
   socialLinks: [
@@ -30,6 +31,27 @@ export const SITE_CONTENT: SiteContent = {
     summary: `Currently pursuing MTech in Artificial Intelligence & Machine Learning. Passionate about building intelligent systems, exploring deep learning, and applying Python-powered solutions to solve real-world problems.`,
     email: "vandana33yadav@gmail.com",
   },
+  education: [
+    {
+      institution: "MTech in Artificial Intelligence & Machine Learning",
+      degree: "Currently Pursuing",
+      startDate: "Present",
+      endDate: "Present",
+    },
+    {
+      institution: "KMC Language University",
+      degree: "B.Tech. in Computer Science and Engineering (AI/ML)",
+      startDate: "2022",
+      endDate: "2025",
+    },
+    {
+      institution: "Govt. Girls Polytechnic",
+      degree: "Diploma in Information Technology",
+      startDate: "2019",
+      endDate: "2022",
+      location: "Ballia, UP",
+    },
+  ],
   experience: [
     {
       company: "Self-Learning / Academic Training",

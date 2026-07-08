@@ -1,0 +1,45 @@
+---
+import Section from "./Section.astro";
+import type { EducationProps } from "@types";
+
+interface Props {
+  education: EducationProps[];
+}
+
+const { education } = Astro.props;
+---
+
+<Section text="Education" href="education">
+  <div class="grid gap-5 md:grid-cols-3">
+    {
+      education.map(({ institution, degree, startDate, endDate, location }) => (
+        <article class="glass glass-hover rounded-2xl p-6 transition-all duration-300">
+          <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-primary/25 bg-primary/10 text-primary">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422A12.083 12.083 0 0118.5 15c0 2.21-2.91 4-6.5 4s-6.5-1.79-6.5-4c0-1.47.57-3.11.34-4.422L12 14z" />
+            </svg>
+          </div>
+
+          <div class="mb-4">
+            <h3 class="font-serif text-xl font-semibold text-white">
+              {institution}
+            </h3>
+            {location && <p class="mt-1 text-sm text-neutral">{location}</p>}
+          </div>
+
+          <p class="mb-5 text-base leading-relaxed text-neutral">
+            {degree}
+          </p>
+
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-primary/8 px-3 py-1 text-xs text-neutral">
+            <svg class="h-3 w-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {startDate} - {endDate}
+          </span>
+        </article>
+      ))
+    }
+  </div>
+</Section>
