@@ -54,28 +54,26 @@ export const SITE_CONTENT: SiteContent = {
   ],
   experience: [
     {
-      company: "Self-Learning / Academic Training",
-      position: "Python & AI/ML Trainee",
-      startDate: "Nov 2025",
+      company: "Academic Training / TATA Motors",
+      position: "Python & AI/ML Intern",
+      startDate: "May 2026",
       endDate: "Present",
       summary: [
-        "Deepening expertise in Python for AI/ML by building end-to-end pipelines using TensorFlow and PyTorch, covering model training, fine-tuning, and deployment.",
-        "Exploring advanced deep learning concepts including CNNs, RNNs, transformers, and LLM-based agent workflows using LangChain and Hugging Face.",
-        "Strengthened debugging and optimization skills across Python-based AI systems, from data preprocessing bottlenecks to model inference performance tuning.",
+        "Developed AI/ML solutions and contributed to the Multimodal AI Video Assistant project using Python, FastAPI, and React.",
+        "Worked on RAG, LangChain, Qdrant, model integration, debugging, and deployment for real-world AI applications.",
       ],
     },
     {
-      company: "Academic & Project-Based Training",
-      position: "Python Developer",
-      startDate: "Sept 2023",
-      endDate: "May 2025",
+      company: "Summer Training / Techpile Technology Pvt. Ltd.",
+      position: "Python with Django Trainee",
+      startDate: "Jul 2024",
+      endDate: "Sep 2024 (60 Days)",
       summary: [
-        "Built machine learning and data analysis projects using Python, Scikit-learn, Pandas, NumPy, Matplotlib, and Seaborn, applying statistical and ML techniques to real-world datasets.",
-        "Developed REST APIs and backend services using FastAPI and Django, applying clean code principles and data validation with Pydantic.",
-        "Sharpened problem-solving skills through debugging data pipelines, model evaluation challenges, and optimizing Python code for performance and readability.",
+        "Completed a 60-day training in Python with Django, building web applications with Django and MySQL.",
+        "Implemented CRUD operations, authentication, database connectivity, and responsive web interfaces.",
       ],
     },
-  ],  
+  ],
   projects: [
     {
       name: "Contexians: A Conscious Context-Aware Multi-Document Q&A System Using RAG",
